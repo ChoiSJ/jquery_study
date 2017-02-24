@@ -11,9 +11,9 @@
             $("tbody > tr").each(function(index, item) {
                 //var qty = $(item).find("td").eq(1).text();
                 //var price = $(item).find("td").eq(2).text();
-                var tds = $(item).find('td')
-                var qty = tds.eq(1).text();
-                var price = tds.eq(2).text();
+                var $tds = $(item).find('td')
+                var qty = $tds.eq(1).text();
+                var price = $tds.eq(2).text();
                 
                 sum += (qty * price);
             });
