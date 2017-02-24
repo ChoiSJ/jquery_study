@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            /*
+                계층 선택자
+                    자손 선택자         $('div p')
+                        div 태그 내부에 있는 모든 p 를 선택한다.
+                    자식 선택자          $('div > p')
+                        div 태그 직계 자손 중에서 p 를 선택한다.
+                    다음 인접 선택자      $('div + p')
+                        div 와 바로 다음에 있는 p 를 선택한다.
+                    형제 선택자          $('div ~ p')
+                        div 다음에 있는 p 를 모두 선택한다.
+            */
+            
+            // 자손 선택자
+            $('.intro p').css('color', 'crimson');
+            // 자식 선택자
+            $('.intro > p').css('background-color', 'lightgreen');
+            $('.intro > div p').css('border', '1px solid crimson');
+            
+            // 다음 인접 선택자: h1 태그 바로 다음에 있는 ul 을 찾는다.
+            $('h1 + ul').css('color', 'aqua');  // 검색되는 요소 없음
+            // 형제 선택자: h1 태그 다음에 있는 ul 을 모두 찾는다.
+            $('h1 ~ ul').css('color', 'darksalmon');
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+    <h1>홈페이지 방문을 환영합니다.</h1>
+    
+    <div class="intro">
+        <p>제 이름은 <span id="user-name">홍진호</span> 입니다.</p>
+        <p id="my-address">저는 서울에서 살고 있습니다.</p>
+        <p>친구가 겁나 많습니다.</p>
+        
+        <h3>친구들</h3>
+        <div>
+            <p>서울에 사는 임요환</p>
+            <p>한국에 사는 이윤열</p>
+            <p>춘천에 사는 누군가</p>
+        </div>
+    </div>
+    
+    <h2>좋아하는 가수</h2>
+    <ul>
+        <li class="first">볼빨간 사춘기</li>
+        <li>유성은</li>
+        <li>트와이스</li>
+    </ul>
+    
+    <h2>좋아하는 운동</h2>
+    <ul>
+        <li class="first">달리기</li>
+        <li>자전거 타기</li>
+        <li>등산</li>
+    </ul>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- jquery library 를 포함시키기 -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("h1").css('color', 'red');        
+        })
+        
+        $(document).ready(function() {
+            $("p").hide(5000);
+        });
+    </script>
+</head>
+<body>
+    <h1>첫 번째 jquery 연습</h1>
+    
+    <p>$(콜백함수) 와 $(document).ready(콜백함수) 는 같은 방식으로 동작한다.</p>
+</body>
+</html>

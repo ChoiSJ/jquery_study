@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('tbody tr').mouseenter(function() {
+                var textValue = $(this).find('td').last().text();
+                $("#result-box").text(textValue);
+            });
+        })
+    </script>
+</head>
+<body>
+    <p id="result-box"></p>
+    <div>
+        검색어: <input type="text" id="keyword-box"><hr>
+    </div>
+    <table border="1" width="100%">
+        <colgroup>
+            <col width="20%"/>
+            <col width="40%"/>
+            <col width="40%"/>
+        </colgroup>
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>국가명</th>
+                <th>수도</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>미국</td>
+                <td>워싱턴</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>프랑스</td>
+                <td>파리</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>영국</td>
+                <td>런던</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>중국</td>
+                <td>북경</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>일본</td>
+                <td>동경</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>대만</td>
+                <td>타이베이</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

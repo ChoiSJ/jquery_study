@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        /*
+             위치기반 필터 선택자
+             $('p:first')
+                p 중에서 첫번째 요소를 선택한다.
+             $('p:last')
+                p 중에서 마지막 요소를 선택한다.
+             $('p:eq(0)')
+                p 중에서 0번째 요소를 선택한다.
+             $('p:gt(0)')
+                p 중에서 0번째 이후의 모든 요소를 선택한다.
+             $('p:lt(1)')
+                p 중에서 1번째 이전의 모든 요소를 선택한다.
+             $('p:even')
+                p 중에서 짝수번째 요소를 선택한다.
+             $('p:odd')
+                p 중에서 홀수번째 요소를 선택한다.
+        */
+        
+        $(function() {
+            // tr 중에서 첫번째 요소를 선택해서 배경색을 바꾸기
+            $('tr:first').css('background-color', 'crimson');
+            // tr 중에서 0번째 이후 모든 요소를 선택해서 배경색을 바꾸기
+            $('tr:gt(0)').css('background-color', 'lightcoral');
+            
+            $("tr:even").css("color", "white");
+            $("tr:odd").css("color", "green");
+            
+            var notebook = $('tr:eq(2) td:eq(1)').text();
+            console.log(notebook);
+            
+            $('tbody tr td:last-child').each(function(i, item) {
+                var price = $(item).text();
+                var discountPrice = price * 0.9;
+                $(item).text(price + "원 (" + discountPrice + "원)");
+            });
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <td>번호</td>
+                <td>상품</td>
+                <td>가격</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>100</td>
+                <td>아이폰7</td>
+                <td>900000</td>
+            </tr>
+            <tr>
+                <td>102</td>
+                <td>LG 그램 노트북</td>
+                <td>1200000</td>
+            </tr>
+            <tr>
+                <td>104</td>
+                <td>샤오미 보조 배터리</td>
+                <td>15000</td>
+            </tr>
+            <tr>
+                <td>107</td>
+                <td>핸드폰 케이스</td>
+                <td>30000</td>
+            </tr>
+            <tr>
+                <td>109</td>
+                <td>블루투스 헤드폰</td>
+                <td>500000</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

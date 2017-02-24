@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .score-box {
+            background-color: lightcoral;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            /*
+            var scoreBoxes = $('#score-table .score-box');
+            var sum = 0;
+            
+            for (var i=0; i<scoreBoxes.length; i++) {
+                var score = parseInt($(scoreBoxes[i]).text());
+                sum += score;
+            }
+            
+            console.log("합계:", sum);
+            */
+            
+            function b(item) {
+                console.log(item);
+            }
+            
+            function a(callback) {
+                var items = ['진호', '요환', '윤열'];
+                
+                callback(items[0]);
+                callback(items[1]);
+                callback(items[2]);
+            }
+            
+            a(b);
+            
+            a(function(item) {
+                console.log("["+item+"]")
+            });
+            
+            a(function(item) {
+                console.log(item.charAt(0));
+            })
+            
+            var sum = 0;
+            
+            $('.score-box').each(function(index, item) {
+                var score = parseInt($(item).text());
+                sum += score;
+            })
+            
+            console.log(sum);
+        })
+    </script>
+</head>
+<body>
+    <table id="score-table" border="1">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th>이름</th>
+                <th>성적</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>홍진호</td>
+                <td class="score-box">22</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>임요환</td>
+                <td class="score-box">11</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>강민</td>
+                <td class="score-box">33</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

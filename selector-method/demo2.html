@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            var sum = 0;
+            
+            $("tbody > tr").each(function(index, item) {
+                //var qty = $(item).find("td").eq(1).text();
+                //var price = $(item).find("td").eq(2).text();
+                var tds = $(item).find('td')
+                var qty = tds.eq(1).text();
+                var price = tds.eq(2).text();
+                
+                sum += (qty * price);
+            });
+            
+            $("#total-box").text(sum);
+        })
+    </script>
+</head>
+<body>
+    <table border="1" width="100%">
+        <tbody>
+            <tr>
+                <td>아이폰7</td>
+                <td>2</td>
+                <td>800000</td>
+            </tr>
+             <tr>
+                <td>갤럭시노트7</td>
+                <td>1</td>
+                <td>900000</td>
+            </tr>
+             <tr>
+                <td>LG V20</td>
+                <td>3</td>
+                <td>600000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2">구매금액 합계</td>
+                <td id="total-box"></td>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        /*
+            $("p:contains('길동')"): '길동' 을 포함하고 있는 요소를 모두 검색한다
+            $("div:empty"): 내부가 비어 있는 div 요소를 모두 검색한다.
+            $("div:has(p)"): p 를 지식요소로 가지는 div 를 모두 검색한다.
+            $("div:not(has(p))"): p 를 자식요소로 가지는 div 를 제외한 나머지 div 를 모두 검색한다.
+            $("div:parent"): 자식요소를 가지고 있는 div 를 모두 검색한다.
+        */
+    </script>
+</head>
+<body>
+    <div></div>
+    <div>
+        <p>단락1</p>
+    </div>
+    <div>
+        <span>단락2</span>
+    </div>
+</body>
+</html>

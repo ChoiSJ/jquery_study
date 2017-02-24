@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        /*
+            속성선택자
+                태그의 속성(attribute)를 활용해서 html 요소를 선택한다.
+                
+            $('[href]'): href 라는 속성을 가지고 있는 모든 요소를 찾는다.
+            $('[href="list.hta"]'): href 의 속성값이 list.hta 와 일치하는 모든 요소를 찾는다.
+            $('[href^="http"]'): href 의 속성값이 http 로 시작하는 모든 요소를 찾는다.
+            $('[href=".jpg"]'): href 의 속성값이 .jpg 로 끝나는 모든 요소를 찾는다.
+            $('[href*="co"]'): href 의 co 라는 문자열을 포함하고 있는 모든 요소를 찾는다.
+            $('[href~="winter"]'): href 의 속성값이 winter 라는 단어() 를 포함하고 있는 모든 요소를 찾는다.
+        */
+        
+        $(function() {
+            // name 속성값이 username 인 필드의 값을 변경해보기
+            $('[name="username"]').val("홍진호");
+
+            // type 속성값이 password 인 필드의 입력값을 읽어오기
+            var pwd = $('[type=password]').val();
+            console.log(pwd);
+
+            // name 속성값이 user 로 시작하는 필드를 비활성화하기
+            $('[name^="user"]').attr("disabled", "disabled");
+            
+            // alt 속성값에 세이버가 포함된 모든 요소를 선택한다.
+            $('img[alt*="세이버"]').css('border', '1px solid crimson');
+            // alt 속성값이 세이 단어가 포함된 모든 요소를 선택한다.
+            $('img[alt~="세이버"]').css('border', '1px solid crimson');
+        })
+    </script>
+</head>
+<body>
+    <div>
+        이름: <input type="text" name="username"><br>
+        비번: <input type="password" name="userpwd"><br>
+        나이: <input type="text" name="age" value="30"><br>
+        별명: <input type="text" name="nickname">
+    </div>
+    
+    <div>
+        <img src="saver.gif" width="300px" height="200px" alt="세이버"/>
+        <img src="saver.gif" width="300px" height="200px" alt="세이버페이스"/>
+        <img src="saver.gif" width="300px" height="200px" alt="세이버 너무 많다"/>
+    </div>
+</body>
+</html>

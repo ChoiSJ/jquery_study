@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            $('.header + .content').hide();
+            
+            $('.header').click(function() {
+                $(this).next().show('show');
+            });
+        })
+    </script>
+</head>
+<body>
+    <div id="box">
+        <h3 class="header">제목1</h3>
+        <div class="content">내용1내용1내용1내용1내용1내용1내용1내용1내용1내용1</div>
+        
+        <h3 class="header">제목2</h3>
+        <div class="content">내용2내용2내용2내용2내용2내용2내용2내용2내용2내용2</div>
+        
+        <h3 class="header">제목3</h3>
+        <div class="content">내용3내용3내용3내용3내용3내용3내용3내용3내용3내용3</div>
+    </div>
+</body>
+</html>

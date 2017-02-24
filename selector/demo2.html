@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            /*
+                기본 선택자
+                    태그 선택자      $('태그명'): 지정된 태그이름과 일치하는 모든 요소를 선택한다.
+                    아이디 선택자     $('#아이디'): 지정된 아이디값으 가지는 요소를 선택한다.
+                    클래스 선택자     $('.클래스'): 지정된 클래스값을 포함하고 있는 모든 요소를 선택한다.
+            */
+            
+            // 태그 이름 선택자
+            $('h1').text("선택된 태그의 텍스트 컨텐츠를 바꾸자.");
+            // 모든 li 태그를 찾아서 컨텐츠의 색을 크림슨으로 바꾼다.
+            $('li').css('color', 'crimson');
+            
+            // 클래스 선택자
+            $('.first').css('font-weight', 'bold');
+            
+            // 아이디 선택자
+            $('#user-name').css('color', 'aqua');
+            var addr = $('#my-address').text();
+            alert(addr);
+            
+            // 열거형: , 를 사용해서 여러 개의 선택자를 나열하면 
+            // 각각의 선택자에 해당되는 모든 요소를 검색한다.
+            $('h1, h2').css('color', 'blue');
+            $('.intro, li').css('border', '2px solid black')
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+    <h1>홈페이지 방문을 환영합니다.</h1>
+    
+    <div class="intro">
+        <p>제 이름은 <span id="user-name">홍진호</span> 입니다.</p>
+        <p id="my-address">저는 서울에서 살고 있습니다.</p>
+        <p>친구가 겁나 많습니다.</p>
+    </div>
+    
+    <h2>좋아하는 가수</h2>
+    <ul>
+        <li class="first">볼빨간 사춘기</li>
+        <li>유성은</li>
+        <li>트와이스</li>
+    </ul>
+    
+    <h2>좋아하는 운동</h2>
+    <ul>
+        <li class="first">달리기</li>
+        <li>자전거 타기</li>
+        <li>등산</li>
+    </ul>
+</html>
