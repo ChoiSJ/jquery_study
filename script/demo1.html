@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        var obj = {
+            name: "진호",
+            
+            getName: function() {
+                return this.name;
+            },
+            
+            setName: function(name) {
+                this.name = name;
+            }
+        }
+        
+        // 객체에 새로운 프로퍼티를 추가하기
+        obj["age"] = 30;
+        
+        // 객체에 새로운 함수를 추가하가
+        obj["print"] = function() {
+            console.log(this.age, this.name);
+        };
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

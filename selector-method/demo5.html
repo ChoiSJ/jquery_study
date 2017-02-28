@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            // map() 함수의 실행결과는 회원이름이 들어 있는 jQuery 객체다.
+            var $userNames = $("li").map(function(index, item) {
+                var username = $(item).text();
+                return username;
+            });
+            
+            // get() 함수의 실행결과는 회원이름이 들어 있는 배열이다.
+            var username = $userNames.get();
+            
+            $("p").text(username.join());
+        })
+    </script>
+</head>
+<body>
+    <h3>우수 회원 목록</h3>
+    
+    <ul>
+        <li>홍진호</li>
+        <li>임요환</li>
+        <li>강민</li>
+        <li>이윤열</li>
+    </ul>
+    <p></p>
+</body>
+</html>

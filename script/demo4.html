@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        (function(global) {
+            function factory(id) {
+                var el = document.getElementById(id);
+                
+                return {
+                    getContent: function() {
+                        return el.textContent;
+                    },
+                    
+                    setContent: function(text) {
+                        el.textContent = text;
+                    }
+                }
+            }
+            
+            global.e = factory;
+        })(window)
+    </script>
+</head>
+<body>
+    <p id="first">안녕하세요.</p>
+    <p id="second">반갑습니다.</p>
+    <p id="third">그럼 이만...</p>
+</body>
+</html>

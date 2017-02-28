@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        // json 표기법으로 작성된 텍스트
+        var jsonText = '{"title":"로건", "genre":"sf", "playtime":120, "discount":false}';
+        
+        // json 표기법으로 작성된 텍스트를 javascript 의 객체 혹은 배열로 변환하기
+        var movie = JSON.parse(jsonText);
+        
+        console.log("영화제목:", movie.title);
+        console.log("영화장르:", movie.genre);
+        console.log("영화시간:", movie.playtime);
+        
+        var jsonText2 = '["로건", "23아이덴티티", "재심", "트롤", "문라이트"]';
+        var movieList = JSON.parse(jsonText2);
+        
+        //console.log("1위:", movieList[0]);
+        
+        for (var i=0; i<movieList.length; i++) {
+            console.log(movieList[i]);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

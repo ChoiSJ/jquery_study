@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        function Person() {
+            this.printInfo = function() {
+                return "정보";
+            }
+        }
+        
+        Person.prototype.getName = function() {
+            console.log("홍진호");
+        }
+        
+        var person1 = new Person();
+        var person2 = new Person();
+        
+        //console.log(person1);
+        //console.log(person2);
+        
+        person1.getName();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        // Person 타입의 객체를 만들기 위해서 정의한 생성자 함수
+        function Person(name, age, addr) {
+            this.name = name;
+            this.age = age;
+            this.addr = addr;
+            
+            this.printInfo = function() {
+                console.log("이름:" + this.name + " 나이:" + this.age + " 주소:" + this.addr);  
+            };
+        }
+        
+        // Person 생성자 함수를 이용해서 Person 타입의 객체 만들기
+        var person1 = new Person("홍진호", 22, "저그 행성");
+        var person2 = new Person("임요환", 21, "테란 행성");
+        //console.log(person1);
+        //console.log(person2);
+        
+        person1.printInfo();
+        person2.printInfo();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

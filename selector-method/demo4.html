@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            /*
+                $("p").has("span"): p 중에서 span 을 가지고 있는 p 를 모두 선택
+                $("p").not(":first"): p 중에서 첫번째가 아닌 p 를 선택
+                $("p").slice(2): 선택된 p 중에서 2번째부터 마지막까지 선택(0부터 시작)
+                $("p").slice(2, 4): 선택된 p 중에서 2번째부터 4번째 앞까지 선택(0부터 시작)
+            */
+            
+            $("p").slice(2).css("color", "crimson");
+            $("p").slice(2, 4).css("color", "aqua");
+        })
+    </script>
+</head>
+<body>
+    <p>첫번째 단락</p>
+    <p>두번째 단락</p>
+    <p>세번째 단락</p>
+    <p>네번째 단락</p>
+    <p>다섯번째 단락</p>
+    <p>여섯번째 단락</p>
+    <p>일곱번째 단락</p>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            /*
+                $(셀렉터1).filter(셀렉터2)
+                - 셀렉터1 로 선택된 것 중에서 셀렉터2 에 해당하는 것을 찾는다.
+                $(셀렉터1).find(셀렉터2)
+                - 셀렉터1 로 선택된 것의 후손 중에서 셀렉터2 에 해당하는 것을 찾는다.
+            */
+            
+            // 선택된 div 들 중에서 첫번째 것을 찾는다. --> div 가 찾아진다.
+            $("div").filter(":first").css("border", "1px solid crimson");
+            // 선택된 div 의 자손 중에서 첫번째 것을 찾는다.
+            $("div").find(":first").css("background-color", "aqua");
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <p>1번째 단락</p>
+        <p>2번째 단락</p>
+        <p>3번째 단락</p>
+    </div>
+    <div>
+        <p>4번째 단락</p>
+        <p>5번째 단락</p>
+        <p>6번째 단락</p>
+    </div>
+</body>
+</html>

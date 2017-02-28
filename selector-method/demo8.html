@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function() {
+                // this 에는 지금 클릭한 'button 엘리먼트' 가 들어 있다.
+                $(this).parents("tr").remove();
+            });
+        })
+    </script>
+</head>
+<body>
+    <table border="1" width="100%">
+        <thead>
+            <tr>
+                <th>번호</th>
+                <th colspan="2">이름</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>임요환</td>
+                <td><button>삭제</button></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>홍진호</td>
+                <td><button>삭제</button></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>이윤열</td>
+                <td><button>삭제</button></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

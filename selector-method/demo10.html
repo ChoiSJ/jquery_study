@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            var xml = '<?xml version="1.0" encoding="utf-8"?>';
+            xml += '<book>';
+            xml += '    <title>이것이 자바다</title>';
+            xml += '    <author>신용권</author>';
+            xml += '</book>';
+            
+            // xml 형식의 문서/텍스트를 XML Document 객체로 변환한다.
+            var xmlDoc = $.parseXML(xml);
+            console.log(xmlDoc);
+            
+            var bookTitle = $(xmlDoc).find("title").text();
+            var bookAuthor = $(xmlDoc).find("author").text();
+            console.log("제목:", bookTitle);
+            console.log("저자:", bookAuthor);
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

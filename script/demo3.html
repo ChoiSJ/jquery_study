@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        // 실행될 때마다 새로운 객체를 만들어서 반환하는 팩토리 함수다.
+        // 팩토리 함수를 활용하면 변수를 은닉화할 수 있다.
+        function person(name, age, addr) {
+            var _name = name;
+            var _age = age;
+            var _addr = addr;
+            
+            return {
+                getName: function() {
+                    return _name;
+                },
+                
+                getAge: function() {
+                    return _age;
+                },
+                
+                getAddr: function() {
+                    return _addr;
+                }
+                
+                
+            }
+        }
+        
+        var person1 = person("홍진호", 22, "저그");
+        var person2 = person("임요환", 21, "테란");
+        alert(person1.getName());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

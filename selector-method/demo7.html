@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid gray;
+        }
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        /*
+            // 트리 횡단 탐색 메소드
+            .find('선택자'): 현재 선택된 요소의 자손 중에서 선택자가 지정한 모든 요소가 선택된다.
+                        xml 척리에 자주 사용된다.
+            .prev(): 현재 선택된 요소의 이전 요소를 선택한다.(형제 관계)
+            .next(): 현재 선택된 요소의 다음 요소를 선택한다.(형제 관계)
+            .parent(): 현재 선택된 요소의 부모 요소를 선택한다.
+            .parents(): 현재 선택된 요소의 모든 조상 요소를 선택한다.
+            .parents('선택자'): 현재 선택된 요소의 조상 요소 중에서 '선택자' 가 지정한 요소가 선택된다.
+            .closest('선택자
+            '): 현재 선택된 요소의 조상 요소 중에서 '선택자' 가 지정한 가장 가까운 요소가 선택된다.
+            .sibling(): 현재 선택된 요소와 형제 관계에 있는 모든 요소가 선택된다.
+            .children(): 현재 선택된 요소의 직계 자식 요소가 모두 선택된다.
+        */
+        
+        $("#first-box p:first").next();     // <p>두번째 단락</p>
+        $("#first-box > p:last").prev();    // <p>두번째 단락</p>
+        $("#first-box p:last").prev();      // <p>두번째 단락</p>
+        $("#first-box > p:eq(1)").siblings; // <p>첫번째 단락</p>, <p>세번째 단락</p>,
+                                            // <div id="first-inner-box"></div>
+        // 부모 요소
+        $("#item1").parent();               // div#content-body
+        // 조상 요소
+        $("#item1").parents();              // div#content-body
+                                            // div#first-inner-box
+                                            // div#first-box
+                                            // <body>, <html>
+        // 셀렉터가 지정하는 모든 조상 요소
+        $("#item1").parents("#first-inner-box");    // div#first-inner-box
+        // 셀렉터가 지정하는 모든 조상 요소
+        $("#item1").parents("div");         // div#content-body, div#first-inner-box
+                                            // div#first-box
+        // 셀렉터가 지정하는 가장 가까운 요소 중 하나
+        $("#item1").closest("div");         // div#content-body
+        // 직계 자식 요소를 찾는다.
+        $("first-box").children();          // p, p, p, div#first-inner-box
+    </script>
+</head>
+<body>
+    <div id="first-box">
+        <p>첫번째 단락</p>
+        <p>두번째 단락</p>
+        <p>세번째 단락</p>
+        <div id="first-inner-box">
+            <div class="header">제목입니다.</div>
+            <div class="content-body">
+                <p id="item1">네번째 단락</p>
+                <p>다섯번째 단락</p>
+            </div>
+        </div>
+    </div>
+    <div id="second-box">
+        <p>여섯번째 단락</p>
+        <p>일곱번째 단락</p>
+        <p>여덟번째 단락</p>
+    </div>
+</body>
+</html>

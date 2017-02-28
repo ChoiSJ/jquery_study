@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            /*
+                $(s1).조작함수1().add(s2).조작함수2(): 
+                - s1 과 s2 로 조회된 요소를 합쳐서 조작함수2 를 적용한다.
+                $(s1).조작함수1()
+                    .필터함수(s2).조작함수2()
+                    .addBack().조작함수3():
+                - s1 으로 조회된 요소에 조작함수1 을 적용하고
+                s2 로 조회된 요소에 조작함수2 를 적용하고
+                s1 과 s2 조회된 요소를 합쳐서 조작함수3 을 적용한다.
+                $(s1).필터함수(s2).조작함수1().end().조작함수2():
+                - s1 으로 조회된 요소 중에서 s2 로 골라진 요소에 조작함수1 을 적용하고
+                s1 으로 되돌아가서 조작함수2 를 적용한다.
+            */
+            
+            // div 안의 h3 은 빨갛게, div 안의 p 는 파랗게
+            $("div h3").css("color", "crimson");
+            $("div p").css("color", "green");
+            
+            // end() 를 활용하는 방법
+            $("div").find("h3").css("color", "aqua").end().find("p").css("color", "gold");
+            
+            // div 안의 h3 은 노랗게, div 안의 p 는 회색 배경색을 각각 넣고
+            // h3 과 p 모두 이탤릭폰트로 변경하기
+            $("div h3").css("background-color", "yellow")       // h3 의 고유조작
+                .nextAll("p").css("background-color", 'gray')   // p 의 고유조작
+                .addBack().css("font-style", "italic");         // h3 과 p 의 공통조작
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <h3>아카데미 시상식 요약</h3>
+        <p>라라랜드가 아카데미의 주요 부분 수상을 휩쓸었다.</p>
+        <p>이번 아카데미에서는 흑인배우가 남녀조연상을 수상했다.</p>
+        <p>아카데미 작품상은 문라이트가 수상했다.</p>
+    </div>
+</body>
+</html>

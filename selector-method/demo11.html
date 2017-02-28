@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            var xml = '<?xml version="1.0" encoding="utf-8"?>';
+           
+            xml += '<songlist>';
+            xml += '    <song>';
+            xml += '        <ranking>1위</ranking>';
+            xml += '        <title>knock knock</title>';
+            xml += '        <artist>TWICe</artist>';
+            xml += '    </song>';
+            xml += '    <song>';
+            xml += '        <ranking>2위</ranking>';
+            xml += '        <title>첫눈처럼 너에게 가겠다.</title>';
+            xml += '        <artist>에일리</artist>';
+            xml += '    </song>';
+            xml += '    <song>';
+            xml += '        <ranking>3위</ranking>';
+            xml += '        <title>봄날</title>';
+            xml += '        <artist>방탄소년단</artist>';
+            xml += '    </song>';
+            xml += '</songlist>';
+            
+            var xmlDoc = $.parseXML(xml);
+            
+            var htmlContent = "";
+            
+            $(xmlDoc).find("song").each(function(index, item) {
+                var rank = $(item).find("ranking").text();
+                var title = $(item).find("title").text();
+                var artist = $(item).find("artist").text();
+                
+                htmlContent += "<tr>";
+                htmlContent += "<td>"+rank+"</td>";
+                htmlContent += "<td>"+title+"</td>";
+                htmlContent += "<td>"+artist+"</td>";
+                htmlContent += "</tr>";
+            })
+            
+            $("tbody").html(htmlContent);
+        })
+    </script>
+</head>
+<body>
+    <h1>멜론 차트 순위</h1>
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>순위</th>
+                <th>곡명</th>
+                <th>가수</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</body>
+</html>

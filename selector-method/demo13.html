@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            /*
+            $("button").each(function(index, item) {
+                $(this).click(function() {
+                    alert(index+1);
+                })
+            })
+            */
+            
+            var buttons = document.getElementsByTagName("button");
+            
+            for (var i=0; i<buttons.length; i++) {
+                (function(num) {
+                    var button = buttons[i];
+                    button.addEventListener("click", function() {
+                        alert(num+1); 
+                    });
+                })(i);
+            }
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <button>1번 버튼</button>
+        <button>2번 버튼</button>
+        <button>3번 버튼</button>
+        <button>4번 버튼</button>
+    </div>
+</body>
+</html>
