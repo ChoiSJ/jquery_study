@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {margin: 20px; padding: 20px; border: 1px solid crimson;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function() {
+                alert("버튼이 클릭되었습니다.");
+            });
+            
+            //$("button").remove();
+            
+            // 첫번째 박스의 버튼을 두번째 박스로 옮기기
+            var $buttons = $("div#first-box button").detach();
+            $("div#second-box").append($buttons);
+        })
+    </script>
+</head>
+<body>
+    <div id="first-box">
+        <button>클릭1</button>
+        <button>클릭2</button>
+        <button>클릭3</button>
+    </div>
+    
+    <div id="second-box"></div>
+</body>
+</html>
+</html>

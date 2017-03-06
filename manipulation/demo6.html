@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        html, body, div, p {margin: 0; padding: 0;}
+        body, div {border: 1px solid crimson}
+        div {margin: 20px; background-color: aqua;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        /*
+            .offset() 은 엘리먼트의 좌표를 읽고/설정할 수 있다.(절대좌표: 원점이 기준이다.)
+                .offset() 의 실행결과는 {top:좌표값, left:좌표값}
+                .offset().top: 원점으로부터의 수직좌표값
+                .offset().left: 원점으로부터 수평좌표값
+        */
+        $(function() {
+            var top = $('div').offset().top;
+            var left = $('div').offset().left;
+            var bottom = $('div').offset().bottom;
+            var right = $('div').offset().right;
+            
+            console.log("top", top);
+            console.log("left", left);
+            console.log("bottom", bottom);
+            console.log("right", right);
+            
+            $("div").offset({top:300, left:-100});
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <p>첫번째 단락</p>
+        <p>두번째 단락</p>
+    </div>
+</body>
+</html>

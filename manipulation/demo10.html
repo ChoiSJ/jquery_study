@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {margin: 10px; padding: 10px;}
+        p {margin: 5px; padding: 5px; border: 1px solid aqua;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            //$("p").wrap("<div style='border: 1px solid crimson;'></div>");
+            $("p").wrapAll("<div style='border: 1px solid crimson;'></div>");
+            $("p").wrapInner("<span style='border: 1px solid crimson;'></span>");
+        })
+    </script>
+</head>
+<body>
+    <p>첫번째 단락</p>
+    <p>두번째 단락</p>
+    <p>세번째 단락</p>
+    <p>네번째 단락</p>
+</body>
+</html>

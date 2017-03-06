@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .high-light {color: crimson; font-weight: bold;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        /*
+            스타일 조작하기
+            .addClass(클래스): 지정된 클래스를 엘리먼트에 추가한다.
+            .removeClass(클래스): 지정된 클래스를 엘리먼트에서 제거한다.
+            .toggleClass(클래스): 지정된 클래스를 엘리먼트에서 토글시킨다.(없으면 추가하고, 있으면 제거한다.)
+            .hasClass(클래스): 엘리멘트가 지정된 클래스를 포함하고 있으면 true, 없으면 false 를 반환한다.
+        */
+        
+        $(function() {
+            /*
+            $("p").mouseover(function() {
+                $(this).addClass("high-light");
+            }).mouseout(function() {
+                $(this).removeClass("high-light");
+            });
+            */
+            
+            // .hover(함수1, 함수2)
+            // 함수1 은 마우스가 엘리먼트로 진입하는 경우 실행할 콜백함수
+            // 함수2 는 마우스가 엘리먼트를 떠나는 경우 실행될 콜백함수
+            /*
+            $("p").hover(function() {
+                $(this).addClass("high-light");
+            }, function() {
+                $(this).removeClass("high-light");
+            });
+            
+            $("button").click(function() {
+                $("p").toggleClass("high-light");
+            });
+            
+            $("p").mouseenter(function() {
+                $(this).toggleClass("high-light");
+            });
+            */
+            
+            // 클래스에 memo 는 포함하고, first 는 포함하고 있지 않는 p 에 대해서 조작하기
+            // $("p.memo:not('.first')")
+            $("p.memo").each(function() {
+                if (!$(this).hasClass("first")) {
+                    $(this).text("이 단락은 클래스에 first 를 포함하고 있지 않다.");
+                }
+            }); 
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <p class="first memo">마우스가 이 단락 위에 오면 색깔이 변하고, 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락 위에 오면 색깔이 변하고, 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락 위에 오면 색깔이 변하고, 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락 위에 오면 색깔이 변하고, 글자가 커진다.</p>
+        <p class="memo">마우스가 이 단락 위에 오면 색깔이 변하고, 글자가 커진다.</p>
+    </div>
+    <button>스타일 변경하기</button>
+</body>
+</html>

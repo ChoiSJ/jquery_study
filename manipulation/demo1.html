@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        /*
+            .attr(): Element 의 속성값에 대한 읽기, 쓰기, 변경하기를 지원
+                .attr(name)
+                .attr(name, value)
+                .attr({name1:value1, name2:value2, name3:value3})
+                .attr(name, function() {})
+                .removeAttr(name)
+            .html(): Element 의 html 컨텐츠에 대한 읽기, 쓰기, 변경하기를 지원
+            .prop(): Element 의 프로퍼티에 대한 읽기, 쓰기, 변경하기를 지원
+            .text(): Element 의 텍스트 컨텐츠에 대한 읽기, 쓰기, 변경하기를 지원
+            .val(): 폼 요소의 값에 대한 읽기, 쓰기, 변경하기를 지원
+        */
+        
+        $(function() {
+            var filenames = ["Chrysanthemum.jpg", "Penguins.jpg", "Tulips.jpg"]
+            
+            $("img").each(function(index, item) {
+                // item 에는 img 엘리먼트 객체 <--- jQuery 조작함수 사용할 수 없는 단순한 객체
+                
+                $(item).attr("src", "images/" + filenames[index]);
+            });
+            
+            $("img").first().attr({width:"200px", height:"200px"});
+            
+            var totalPrice = 0;
+            $("ul input").each(function() {
+                // this: each() 함수 안에 사용되는 this 에는 항상 처리대상이 되는 그 엘리먼트가 들어 있다.(반복할 때마다 선택된 엘리먼트들이 차례로 하나씩 전달된다.)
+                
+                var price = parseInt($(this).attr("value"));
+                totalPrice += price;
+                
+            });
+            $("#item-total-box").text("합계:" + totalPrice + "원");
+            
+            $(":radio[name='married']").change(function() {
+                // this: this 에는 지금 이벤트가 발생한 그 엘리먼트가 들어 있다.
+                if ($(this).val() === 'no') {
+                    $(":input[name='wedding']").attr("disabled", "disabled");
+                } else {
+                    $(":input[name='wedding']").removeAttr("disabled");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <img src="images/Tulips.jpg" width="150px" height="150px"/>
+        <img src="images/Tulips.jpg" width="150px" height="150px"/>
+        <img src="images/Tulips.jpg" width="150px" height="150px"/>
+    </div>
+    
+    <h3>상품리스트</h3>
+    <ul>
+        <li id="item-1">스마트폰 <input type="text" value="700000"></li>
+        <li id="item-2">게임기 <input type="text" value="150000"></li>
+        <li id="item-3">텔레비전 <input type="text" value="300000"></li>
+    </ul>
+    <p id="item-total-box"></p>
+    
+    <form>
+        이름: <input type="text" name="username"><br>
+        결혼: <input type="radio" name="married" value="yes" checked> 기혼
+            <input type="radio" name="married" value="no"> 미혼<br>
+        결혼기념일: <input type="text" name="wedding"><br>
+    </form>
+</body>
+</html>

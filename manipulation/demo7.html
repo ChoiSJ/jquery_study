@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {border: 1px solid crimson; padding: 20px;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("div#intro").prepend("<p>.prepend() 를 사용한 추가하기</p>");
+            $("div#intro").append("<p>.append() 를 사용한 추가하기</p>");
+            $("div#intro").before("<p>.before() 를 사용한 추가하기</p>");
+            $("div#intro").after("<p>.after() 를 사용한 추가하기</p>");
+            
+            var $item = $("<li></li>")
+            $item.append("<a href='http://www.mymaxim.co.kr'>맥심</a>");
+            $("ul#favorites").append($item);
+            
+            $("<li><a href=''>네스카페</a></li>").appendTo("ul#favorites");
+        })
+    </script>
+</head>
+<body>
+    <div id="intro">
+        <p>홍진호</p>
+        <p>임요환</p>
+        <p>강민</p>
+        <p>이윤열</p>
+    </div>
+    
+    <ul id="favorites">
+        
+    </ul>
+</body>
+</html>

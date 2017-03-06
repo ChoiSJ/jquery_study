@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            // 묵시적인 방법을 사용해도 되는 경우
+            $("li").css("color", "crimson");
+            
+            // 컨텐츠/값을 읽어오는 동작은 묵시적인 방법보다는 each() 를 사용해서 각 아이템별로 하나씩 처리하는 것이 좋다
+            var stat = {};
+            $("li").each(function() {
+                var name = $(this).text();
+                
+                var firstname = name.charAt(0);
+                
+                // stat 객체에서 지정된 성시로 저장된 값이 있으면 그 성씨의 인원수를 증가시키고,
+                // 지정된 성시로 저장된 값이 없으면 그 성씨로 인원수 1을 설정해서 담는다.
+                if (stat[firstname]) {      // stat 객체에서 지정된 성씨로 저장된 값 조회
+                    stat[firstname]++;      // var value = stat[성씨]
+                                            // value 는 undefined 나 숫자일 수 있다.
+                } else {
+                    stat[firstname] = 1;    // stat 객체에 새로운 프로퍼티를 추가
+                                            // stat[성씨] = 1
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>홍진호</li>
+        <li>임요환</li>
+        <li>강민</li>
+        <li>이윤열</li>
+        <li>이제동</li>
+        <li>최연성</li>
+    </ul>
+</body>
+</html>
