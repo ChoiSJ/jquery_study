@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script>
+        $(function() {
+            // 백스페이스 뒤로가기 방지...
+            $(document).keydown(function(event) {
+                alert(event.target.nodeName);
+                if (event.target.nodeName != "INPUT" && event.target.nodeName != "TEXTAREA") {
+                    if (event.which === 8) {
+                        return false;
+                    }
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <input type="text" name="username">
+    <textarea rows="5" cols="50"></textarea>
+</body>
+</html>

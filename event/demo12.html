@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $(":input").change(function() {
+                $("button").removeAttr("disabled");
+            });
+        })
+    </script>
+</head>
+<body>
+    <h1>수정 폼</h1>
+    <form method="post" action="modify.jsp">
+        이름<br>
+        <input type="text" name="username" value="홍진호"><br>
+        아이디<br>
+        <input type="text" name="userid" value="hong"><br>
+        출신지<br>
+        <select name="home">
+            <option>서울</option>
+            <option>경기</option>
+            <option>인천</option>
+            <option>강원</option>
+            <option>충북</option>
+        </select><br>
+        <button type="submit" disabled="disabled">수정</button>
+    </form>
+</body>
+</html>

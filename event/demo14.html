@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {opacity: 0.6;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            // .hover(mouseover 이벤트 발생시 수행할 함수,
+            //      mouseleave 이벤트 발생시 수행할 함수)
+            $("img").hover(function() {
+                $(this).css("opacity", "1.0");
+            }, function() {
+                $(this).css("opacity", "0.6");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+        <img src="images/Tulips.jpg" width="200px" height="200px"/>
+    </div>
+</body>
+</html>

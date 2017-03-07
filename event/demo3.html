@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("button").click(function(event) {
+                console.log(event.type);
+                console.log(event.target);
+                console.log(event.which);
+            });
+            
+            $("input").keyup(function(event) {
+                console.log(event.type);
+                console.log(event.target);
+                console.log(event.which);
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <input type="text" id="user-name" name="username"><br>
+        <button>버튼</button>
+    </div>
+</body>
+</html>

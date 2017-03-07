@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("#first-btn").on("click", function() {
+                alert("첫번째 버튼 클릭");
+            });
+            
+            $("#second-btn").one("click", function() {
+                alert("두번째 버튼 클릭");
+            });
+            
+            $("#third-btn").click(function() {
+                alert("세번째 버튼 클릭");
+            });
+            
+            $("#forth-btn").click(function() {
+                $("#first-btn").off("click");
+                alert("버튼1 과 click이벤트 연결 해제...");
+            });
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <button id="first-btn">버튼1</button>
+        <button id="second-btn">버튼2</button>
+        <button id="third-btn">버튼3</button>
+        
+        <button id="forth-btn">버튼4</button>
+    </div>
+</body>
+</html>

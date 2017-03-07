@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("form").submit(function() {
+                if ($(":input[name='username']").val() == "") {
+                    alert("이름은 필수입력값입니다.");
+                    $(":input[name='username']").focus();
+                    return false;
+                }
+                
+                if ($(":input[name='userid']").val() == "") {
+                    alert("아이디는 필수입력값입니다.");
+                    $(":input[name='userid']").focus();
+                    return false;
+                }
+                
+                if ($(":input[name='userpwd']").val() == "") {
+                    alert("비밀번호는 필수입력값입니다.");
+                    $(":input[name='usernpwd']").focus();
+                    return false;
+                }
+                
+                return true;
+            });
+        })
+    </script>
+</head>
+<body>
+    <form method="post" action="register.jsp">
+        이름<br>
+        <input type="text" name="username"><br>
+        아이디<br>
+        <input type="text" name="userid"><br>
+        비밀번호<br>
+        <input type="password" name="userpwd"><br>
+        <button type="submit">등록</button>
+    </form>
+</body>
+</html>
