@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        img {width: 200px; height: 200px;}
+    </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <script>
+        $(function() {
+            $("img").click(function() {
+                $(this).fadeOut(3000);
+            });
+            
+            $("#fadein-btn").click(function() {
+                $("img:hidden").fadeIn();
+            });
+            
+            $("#fadeto-btn").click(function() {
+                $("img:eq(0)").fadeTo("slow", 0.2);
+                $("img:eq(1)").fadeTo("slow", 0.4);
+                $("img:eq(2)").fadeTo("slow", 0.6);
+                $("img:eq(3)").fadeTo("slow", 0.8);
+            });
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <button id="fadein-btn">fadeIn</button>
+        <button id="fadeto-btn">fadeTo</button>
+    </p>
+    <div>
+        <img src="images/Chrysanthemum.jpg">
+        <img src="images/Hydrangeas.jpg">
+        <img src="images/Penguins.jpg">
+        <img src="images/Tulips.jpg">
+    </div>
+</body>
+</html>
